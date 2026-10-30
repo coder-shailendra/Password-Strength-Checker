@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Password Security Tool</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🔐 SecurePass</div>
+        <nav>
+            <a href="#checker">Password Checker</a>
+            <a href="#generator">Password Generator</a>
+            <a href="#tips">Security Tips</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <p class="tagline">YOUR DIGITAL SECURITY PARTNER</p>
+
+        <h1>
+            Smart Password
+            <span>Security Tool</span>
+        </h1>
+
+        <p class="hero-text">
+            Check your password strength and generate
+            powerful passwords to protect your digital world.
+        </p>
+    </section>
+
+    <main class="container">
+
+        <section class="card" id="checker">
+
+            <h2>🔍 Password Strength Checker</h2>
+
+            <p>Enter your password to check its security.</p>
+
+            <div class="input-box">
+                <input type="password"
+                       id="password"
+                       placeholder="Enter your password">
+
+                <button id="togglePassword" type="button">
+                    Show
+                </button>
+            </div>
+
+            <div class="strength-info">
+                <span>Password Strength</span>
+                <span id="strengthText">Not Checked</span>
+            </div>
+
+            <div class="progress">
+                <div id="strengthBar"></div>
+            </div>
+
+            <div class="requirements">
+                <p id="length">○ At least 8 characters</p>
+                <p id="uppercase">○ Uppercase letter (A-Z)</p>
+                <p id="lowercase">○ Lowercase letter (a-z)</p>
+                <p id="number">○ Number (0-9)</p>
+                <p id="special">○ Special character (@#$!)</p>
+            </div>
+
+            <div id="suggestions">
+                Enter a password to begin checking.
+            </div>
+
+        </section>
+
+
+        <section class="card" id="generator">
+
+            <h2>⚡ Strong Password Generator</h2>
+
+            <p>Create a secure random password.</p>
+
+            <label for="passwordLength">
+                Password Length
+            </label>
+
+            <div class="length-control">
+                <input type="range"
+                       id="passwordLength"
+                       min="8"
+                       max="32"
+                       value="16">
+
+                <span id="lengthValue">16</span>
+            </div>
+
+            <div class="options">
+                <label><input type="checkbox" id="upper" checked> Uppercase</label>
+                <label><input type="checkbox" id="lower" checked> Lowercase</label>
+                <label><input type="checkbox" id="digits" checked> Numbers</label>
+                <label><input type="checkbox" id="symbols" checked> Symbols</label>
+            </div>
+
+            <button class="primary-btn" id="generateBtn">
+                Generate Password
+            </button>
+
+            <div class="generated-box">
+                <input type="text"
+                       id="generatedPassword"
+                       placeholder="Generated password"
+                       readonly>
+
+                <button id="copyBtn" type="button">
+                    Copy
+                </button>
+            </div>
+
+            <p id="copyMessage"></p>
+
+        </section>
+
+
+        <section class="card tips-card" id="tips">
+
+            <h2>🛡️ Password Security Tips</h2>
+
+            <ul>
+                <li>Use at least 12-16 characters.</li>
+                <li>Use a unique password for every account.</li>
+                <li>Avoid names, birthdays and common words.</li>
+                <li>Use a password manager.</li>
+                <li>Enable two-factor authentication.</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 SecurePass | Smart Password Security Tool</p>
+        <p>Protect Your Digital Identity 🔐</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
